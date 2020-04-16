@@ -17,14 +17,17 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     /**
-     * Populate the views with the profile object retrieved from the extras.
+     Initialiseren start Lay out
      */
+
     private fun initViews() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "This is your profile!"
 
         val profile = intent.getParcelableExtra<Profile>(PROFILE_EXTRA)
-
+        /**
+         * als er een profiel is ingevoerd wordt de naam, description en foto toegevoegd
+         */
         if (profile != null) {
             tvName.text = getString(R.string.name, profile.firstName, profile.lastName)
             tvDescription.text = profile.description
